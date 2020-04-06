@@ -145,7 +145,7 @@ define gen_libs
   ULT_LIBS += $(PRG_LIB_DIR)/$1
   $(PRG_LIB_DIR)/$1: $2
 	$3 $(if $(GEN_DYN_LIB),-shared $$^ $(CXXFLAGS) $(LD_LIB_DIR) $(LD_LIBS) $(XLD_FLG) -o $$@,$$@ $$^)
-	ar rcs librga.a RockchipRga.o RockchipFileOps.o RgaApi.o normal/NormalRgaApi.o normal/NormalRga.o 
+	arm-linux-gnueabihf-ar rcs librga.a RockchipRga.o RockchipFileOps.o RgaApi.o normal/NormalRgaApi.o normal/NormalRga.o 
 	@echo -e $(YELLOW)"========================Success========================"$(BLACK)
 endef
 

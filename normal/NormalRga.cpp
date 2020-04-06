@@ -336,7 +336,7 @@ int RgaBlit(rga_info *src, rga_info *dst, rga_info *src1)
 
 	//if (relSrcRect.format == HAL_PIXEL_FORMAT_YCrCb_NV12_10)
 	//	    relSrcRect.wstride = relSrcRect.wstride * 5 / 4;
-
+    #if 0
 	if (src) {
 		ret = checkRectForRga(relSrcRect);
 		if (ret) {
@@ -352,6 +352,7 @@ int RgaBlit(rga_info *src, rga_info *dst, rga_info *src1)
 			return ret;
 		}
 	}
+    #endif
 
 	if (src && dst) {
 		hScale = (float)relSrcRect.width / relDstRect.width;
